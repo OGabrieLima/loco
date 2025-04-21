@@ -1,0 +1,87 @@
+export const paths = {
+  dashboard: {
+    default: '/dashboard',
+    home: '/dashboard/home',
+    referrals: '/dashboard/referrals',
+    analytics: '/dashboard/analytics',
+    communicationCenter: '/dashboard/communication-center',
+    monetisation: '/dashboard/monetisation',
+    performance: '/dashboard/performance',
+    streamerMela: '/dashboard/streamermela',
+    streamerMelaPrize: '/dashboard/streamermela/prizes',
+    streamerMelaStats: '/dashboard/streamermela/stats',
+    wallet: '/dashboard/wallet',
+    walletSelectAccount: '/dashboard/wallet/select-account',
+    walletBeansConverter: '/dashboard/wallet/beans-converter',
+    manageAccounts: '/dashboard/manageAccounts',
+    kyc: '/dashboard/kyc',
+    kycPancard: '/dashboard/kyc/pan-card', // Not is use | No Pan in Brazil
+    kycbankAccount: '/dashboard/kyc/bank-link', // Not is use | This is modal flow now
+    walletTransactions: '/dashboard/wallet/transactions',
+    // live: '/dashboard/live', // NOT IS USE
+    stream: '/dashboard/stream',
+    streamConfig: '/dashboard/streamConfig',
+    videos: '/dashboard/videos',
+    profile: '/dashboard/profile',
+    phoneNumberLink: '/dashboard/profile/phonelink',
+    streamerLeaderboard: '/dashboard/streamerLeaderboard',
+    viewerLeaderboard: '/dashboard/viewerLeaderboard',
+    vipLeaderboard: '/dashboard/vipLeaderboard',
+    menu: '/dashboard/menu',
+    upload: '/dashboard/upload',
+    help: '/dashboard/help',
+    comingSoon: '/dashboard/comingsoon',
+    guidelines: '/dashboard/guidelines',
+    StreamEditId: '/dashboard/videos/edit/:id', // have hardcoded this path somewhere in the code
+    streamerAcademy: '/dashboard/streamerAcademy',
+    academyHowToStream: '/dashboard/streamerAcademy/howToStream',
+    academyContent: '/dashboard/streamerAcademy/contentAndCommunity',
+    academyMonetisation: '/dashboard/streamerAcademy/MonetisationAndRewards',
+    howToStream: '/dashboard/howToStream',
+    howToStreamId: '/dashboard/howToStream/:id',
+    incentives: '/dashboard/incentives',
+    notificationsettings: '/dashboard/notificationsettings',
+    incentivesDetails: '/dashboard/incentives/details',
+    incentivesScenarios: '/dashboard/incentives/scenarios',
+    ITRInformation: '/dashboard/ITRInformation',
+    WhatsNew: '/dashboard/WhatsNew',
+    Lookback2022: '/dashboard/Lookback2022',
+    MessageWall: '/dashboard/MessageWall',
+    clips: '/dashboard/Clips',
+    stickers: '/dashboard/stickers',
+    stickers_terms_and_conditions: '/dashboard/stickers/terms_and_conditions',
+    stickers_faq: '/dashboard/stickers/faq',
+    InteractiveChat: '/dashboard/interactiveChat',
+    community: {
+      moderators: '/dashboard/moderators',
+      activities: '/dashboard/moderators/activities',
+      blockedWords: '/dashboard/moderators/blocked-words',
+      blockedUsers: '/dashboard/moderators/blocked-users',
+    },
+  },
+  howToStream: '/howToStream',
+  howToStreamId: '/howToStream/:id',
+  streamerAcademy: '/streamerAcademy',
+  academyHowToStream: '/streamerAcademy/howToStream',
+  academyContent: '/streamerAcademy/contentAndCommunity',
+  academyMonetisation: '/streamerAcademy/MonetisationAndRewards',
+  ITRInformation: '/ITRInformation',
+  login: '/login',
+  signup: '/signup',
+  logout: '/logout',
+  500: '/500',
+  403: '/403',
+  storageError: '/storageError',
+  privacy: '/privacy',
+  agreement: '/agreement',
+  terms: '/terms',
+  lookback: '/lookback',
+} as const
+
+export const extractPathFromWebviewUrl = (url: string) => {
+  const pathName = new URL(url).pathname
+  if (pathName.charAt(pathName.length - 1) === '/') {
+    return pathName.slice(0, -1)
+  }
+  return pathName
+}
